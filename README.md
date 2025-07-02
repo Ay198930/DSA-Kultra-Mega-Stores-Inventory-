@@ -50,14 +50,40 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
 
 ### 3. Analysis using SQL Server Management Studio 20(Microsoft SQL Server
 ### A. Case Scenario 1
-## 1) Which product category had the highest sales?
-      SELECT TOP 1
-      Product_Category,
-      SUM(Sales) as Total_Sales
+### 1) Which product category had the highest sales?
+    SELECT TOP 1
+    Product_Category,
+    SUM(Sales) as Total_Sales
 	FROM 
-      KMS_Orders
+    KMS_Orders
 	GROUP BY 
-      Product_Category
+    Product_Category
 	ORDER BY 
-      Total_Sales DESC;
+    Total_Sales DESC;
+
+
+### 2) What are the Top 3 and Bottom 3 regions in terms of sales
+	- TOP 3
+	SELECT TOP 3
+    Region,
+    SUM(Sales) as Total_Sales
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Region
+	ORDER BY 
+    Total_Sales DESC;
+
+    - BOTTOM 3
+    SELECT TOP 3
+    Region,
+    SUM(Sales) as Total_Sales
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Region
+	ORDER BY 
+    Total_Sales ASC;
+
+
 
