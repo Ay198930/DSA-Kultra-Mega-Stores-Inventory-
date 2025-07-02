@@ -27,3 +27,17 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       - Go to Number and increase the indent twice to increase the decimal point. This adjusts all numbers that are not on the decimal point. 
 
 ## Step 2. Data Cleaning and Analysis Using SQL Server Management Studio 20(Microsoft SQL Server)
+### 1. Using your import data to load your data into SQL Server Management Studio 20(Microsoft SQL Server)
+      - Open SQL Server Management Studio and connect to your database server
+      - Right-click your target database in Object Explorer
+      - Select Tasks > Import Data... (Your data here is KMSSQLCaseStudy.csv )
+      - In the wizard:
+            - Choose Flat File Source as the data source
+            - Browse and select your CSV file (KMSSQLCaseStudy.csv)
+            - In the  New table name box option, name your file as KMS_Orders (This will serve as the name of our table that will be used for the analysis)
+            - Configure format options (delimiter, text qualifier, etc.)
+            - Preview the data to verify that it looks correct
+      - Click Next and select SQL Server Native Client as the destination
+      - Click Finish to execute the import
+      - Refresh your database to ensure that the new table has been imported
+      
