@@ -26,7 +26,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       - Click on the Home tab in your menu bar 
       - Go to Number and increase the indent twice to increase the decimal point. This adjusts all numbers that are not on the decimal point. 
 
-## Step 2. Data Cleaning and Analysis Using SQL Server Management Studio 20(Microsoft SQL Server)
+## Step 2. Data Cleaning and Analysis Using SQL Server Management Studio 20(Microsoft SQL Server
 ### 1. Using your import data to load your data into SQL Server Management Studio 20(Microsoft SQL Server)
       - Open SQL Server Management Studio and connect to your database server
       - Right-click your target database in Object Explorer
@@ -42,9 +42,22 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       - Refresh your database to ensure that the new table has been imported
 
 ### 2. Table alterations to standardize data types
-      - ALTER TABLE KMS_Orders ALTER COLUMN Sales DECIMAL(10,3);
-      - ALTER TABLE KMS_Orders ALTER COLUMN Profit DECIMAL(10,3);
-      - ALTER TABLE KMS_Orders ALTER COLUMN Discount DECIMAL(10,3);
-      - ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
-      - ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
+      ALTER TABLE KMS_Orders ALTER COLUMN Sales DECIMAL(10,3);
+      ALTER TABLE KMS_Orders ALTER COLUMN Profit DECIMAL(10,3);
+      ALTER TABLE KMS_Orders ALTER COLUMN Discount DECIMAL(10,3);
+      ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
+      ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
+
+### 3. Analysis using SQL Server Management Studio 20(Microsoft SQL Server
+### A. Case Scenario 1
+## 1) Which product category had the highest sales?
+      SELECT TOP 1
+      Product_Category,
+      SUM(Sales) as Total_Sales
+	FROM 
+      KMS_Orders
+	GROUP BY 
+      Product_Category
+	ORDER BY 
+      Total_Sales DESC;
 
