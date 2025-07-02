@@ -12,8 +12,8 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
    - [Case Scenario 1](#case-scenario-1)
    - [Case Scenario 2](#case-scenario-2)
 - [Key Insights](#key-insights)
-- [Strategic Recommendations][(#strategic-recommendations)
-- [Repository Files](#repository-files)
+- [Strategic Recommendations](#strategic-recommendations)
+
    
 ### Project Overview
 The dataset comprises 8,400  products across 21 columns, containing aggregated products, profit margin and shipping information. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
