@@ -11,7 +11,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
 
 **Tools Used:**
 - Microsoft Excel for Data Cleaning  Download Here
-- SQL Server Management Studio 20
+- SQL Server Management Studio 20 for cleaning and analysis
 
 ## Step 1: Data Cleaning Using Microsoft Excel
 ### 1. Clean Your CSV File Before Import
@@ -20,3 +20,10 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       - Find what: empty cells
       - Replace with: `0`
       - Click "Replace All"
+
+### 2. Adjustment of Profit & Unit Price
+      - Highlight all columns in profit and unit price
+      - Click on the Home tab in your menu bar 
+      - Go to Number and increase the indent twice to increase the decimal point. This adjusts all numbers that are not on the decimal point. 
+
+## Step 2. Data Cleaning and Analysis Using SQL Server Management Studio 20(Microsoft SQL Server)
