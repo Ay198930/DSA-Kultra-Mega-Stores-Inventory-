@@ -3,6 +3,18 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 
 ## Kultra Mega Stores Inventory Analysis: Data Cleaning, Analysis, Findings and Recommendations
 
+## Table of Contents
+1. [Project Overview](#-project-overview)
+2. [Data Sources](#-data-sources)
+3. [Tools Used](#-tools-used)
+4. [Methodology](#%EF%B8%8F-methodology)
+   - [Data Cleaning (Excel)](#data-cleaning-using-microsoft-excel)
+   - [SQL Analysis](#data-analysis-using-sql-server)
+5. [Key Findings](#-key-findings)
+6. [Recommendations](#-strategic-recommendations)
+7. [Repository Structure](#-repository-structure)
+8. [How to Use](#-how-to-use-this-repository)
+   
 ### Project Overview
 The dataset comprises 8,400  products across 21 columns, containing aggregated products, profit margin and shipping information. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
 
@@ -234,7 +246,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     Total_Return_Amount ASC;
 
 ### 11) If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer!
-SELECT 
+	SELECT 
     Order_Priority,
     Ship_Mode,
     COUNT(*) AS Order_Count,
