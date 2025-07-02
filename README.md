@@ -40,4 +40,11 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       - Click Next and select SQL Server Native Client as the destination
       - Click Finish to execute the import
       - Refresh your database to ensure that the new table has been imported
-      
+
+### 2. Table alterations to standardize data types
+      - ALTER TABLE KMS_Orders ALTER COLUMN Sales DECIMAL(10,3);
+      - ALTER TABLE KMS_Orders ALTER COLUMN Profit DECIMAL(10,3);
+      - ALTER TABLE KMS_Orders ALTER COLUMN Discount DECIMAL(10,3);
+      - ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
+      - ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
+
