@@ -142,7 +142,8 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     SELECT TOP 5 Customer_Name
     FROM KMS_Orders
     GROUP BY Customer_Name
-    ORDER BY SUM(Sales) DESC )
+    ORDER BY SUM(Sales) DESC
+    	)
 	SELECT 
 	o.Customer_Name,
    	 o.Product_Category,
@@ -170,10 +171,10 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
         FROM KMS_Orders 
         GROUP BY Customer_Name 
         ORDER BY SUM(Sales) DESC
-    )
-GROUP BY 
-    Customer_Name, Product_Category, Product_Sub_Category
-ORDER BY 
+   	 )
+	GROUP BY 
+    	Customer_Name, Product_Category, Product_Sub_Category
+	ORDER BY 
     Customer_Name, Purchase_Count DESC;
 
 ### 7) Which small business customer had the highest sales?
