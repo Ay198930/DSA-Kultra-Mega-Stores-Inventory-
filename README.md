@@ -3,17 +3,17 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 
 ## Kultra Mega Stores Inventory Analysis: Data Cleaning, Analysis, Findings and Recommendations
 
-## Table of Contents
-1. [Project Overview](#-project-overview)
-2. [Data Sources](#-data-sources)
-3. [Tools Used](#-tools-used)
-4. [Methodology](#%EF%B8%8F-methodology)
-   - [Data Cleaning (Excel)](#data-cleaning-using-microsoft-excel)
-   - [SQL Analysis](#data-analysis-using-sql-server)
-5. [Key Findings](#-key-findings)
-6. [Recommendations](#-strategic-recommendations)
-7. [Repository Structure](#-repository-structure)
-8. [How to Use](#-how-to-use-this-repository)
+## 📖 Table of Contents
+- [Project Overview](#-project-overview)
+- [Data Preparation](#-data-preparation)
+   - [Excel Cleaning](#excel-data-cleaning-steps)
+   - [SQL Import](#sql-data-import-process)
+- [Analysis Scenarios](#-analysis-scenarios)
+   - [Case Scenario 1](#case-scenario-1)
+   - [Case Scenario 2](#case-scenario-2)
+- [Key Insights](#-key-insights)
+- [Strategic Recommendations](#-strategic-recommendations)
+- [Repository Files](#-repository-files)
    
 ### Project Overview
 The dataset comprises 8,400  products across 21 columns, containing aggregated products, profit margin and shipping information. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
