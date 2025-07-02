@@ -125,7 +125,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     Total_Shipping_Cost DESC;
 
 ### Case Scenario II
-###6) Who are the most valuable customers, and what products or services do they typically purchase?
+### 6) Who are the most valuable customers, and what products or services do they typically purchase?
 	SELECT TOP 5
     Customer_Name,
     Customer_Segment,
@@ -142,13 +142,12 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     SELECT TOP 5 Customer_Name
     FROM KMS_Orders
     GROUP BY Customer_Name
-    ORDER BY SUM(Sales) DESC
-)
+    ORDER BY SUM(Sales) DESC )
 	SELECT 
-    o.Customer_Name,
-    o.Product_Category,
-    o.Product_Sub_Category,
-    COUNT(*) AS Purchase_Count
+	o.Customer_Name,
+   	 o.Product_Category,
+   	 o.Product_Sub_Category,
+    	COUNT(*) AS Purchase_Count
 	FROM 
     KMS_Orders o
     INNER JOIN Top_Customers tc ON o.Customer_Name = tc.Customer_Name
@@ -172,7 +171,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
         GROUP BY Customer_Name 
         ORDER BY SUM(Sales) DESC
     )
-	GROUP BY 
+GROUP BY 
     Customer_Name, Product_Category, Product_Sub_Category
 ORDER BY 
     Customer_Name, Purchase_Count DESC;
@@ -233,7 +232,7 @@ ORDER BY
 	ORDER BY 
     Total_Return_Amount ASC;
 
-### 11) If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer
+### 11) If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer!
 SELECT 
     Order_Priority,
     Ship_Mode,
@@ -248,7 +247,7 @@ SELECT
 	ORDER BY 
     Order_Priority, Total_Shipping_Cost DESC;
     
-*Findings:*
+**Findings:**
 - Critical Orders (Should use fastest method):
 	- 35.9% used Delivery Truck (slowest)
 	- 15.4% used Express Air (fastest)
