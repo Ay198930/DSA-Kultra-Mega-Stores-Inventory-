@@ -4,16 +4,16 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 ## Kultra Mega Stores Inventory Analysis: Data Cleaning, Analysis, Findings and Recommendations
 
 ## 📖 Table of Contents
-- [Project Overview](#-project-overview)
-- [Data Preparation](#-data-preparation)
+- [Project Overview](#project-overview)
+- [Data Preparation](#data-preparation)
    - [Excel Cleaning](#excel-data-cleaning-steps)
    - [SQL Import](#sql-data-import-process)
-- [Analysis Scenarios](#-analysis-scenarios)
+- [Analysis Scenarios](#analysis-scenarios)
    - [Case Scenario 1](#case-scenario-1)
    - [Case Scenario 2](#case-scenario-2)
-- [Key Insights](#-key-insights)
-- [Strategic Recommendations](#-strategic-recommendations)
-- [Repository Files](#-repository-files)
+- [Key Insights](#key-insights)
+- [Strategic Recommendations][(#strategic-recommendations)
+- [Repository Files](#repository-files)
    
 ### Project Overview
 The dataset comprises 8,400  products across 21 columns, containing aggregated products, profit margin and shipping information. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
@@ -22,7 +22,7 @@ The dataset comprises 8,400  products across 21 columns, containing aggregated p
 The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an open-source dataset that is freely available for download from platforms such as Kaggle, LMS platform or other public data repositories.
 
 **Tools Used:**
-- Microsoft Excel for Data Cleaning  Download Here
+- Microsoft Excel for Data Cleaning  [Download Here](https://www.microsoft.com/en-us/microsoft-365/download-office) 
 - SQL Server Management Studio 20 for cleaning and analysis
 
 ## Step 1: Data Cleaning Using Microsoft Excel
