@@ -84,6 +84,34 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     Region
 	ORDER BY 
     Total_Sales ASC;
+    
+### 3) What were the total Sales of appliances in Ontario?
+	SELECT 
+    SUM(Sales) AS Total_Sales
+	FROM
+    KMS_Orders
+	WHERE 
+    Product_Sub_Category = 'Appliances'
+    AND Province = 'Ontario';
+
+### 4) Advise the management of KMS on what to do to increase the revenue from the bottom 10 customers
+	Select * from KMS_Orders
+	SELECT TOP 10
+    Customer_Name,
+    SUM(Sales) AS Total_Sales
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Customer_Name
+	ORDER BY 
+    Total_Sales ASC;
+    
+**Recommendations**
+- Create targeted promotions for these customers
+- Implement a customer win-back campaign
+- Analyse purchase patterns for upsell opportunities
+- Improve customer service engagement
+- Offer bundled products at discounted rates
 
 
 
