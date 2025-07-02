@@ -113,5 +113,221 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
 - Improve customer service engagement
 - Offer bundled products at discounted rates
 
+### 5) KMS incurred the most shipping cost using which shipping method?
+	SELECT TOP 1
+    Ship_Mode,
+    SUM(Shipping_Cost) AS Total_Shipping_Cost
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Ship_Mode
+	ORDER BY 
+    Total_Shipping_Cost DESC;
+
+### Case Scenario II
+###6) Who are the most valuable customers, and what products or services do they typically purchase?
+	SELECT TOP 5
+    Customer_Name,
+    Customer_Segment,
+    SUM(Sales) AS Total_Sales
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Customer_Name, Customer_Segment
+	ORDER BY 
+    Total_Sales DESC;
+
+	- Their purchases
+	WITH Top_Customers AS (
+    SELECT TOP 5 Customer_Name
+    FROM KMS_Orders
+    GROUP BY Customer_Name
+    ORDER BY SUM(Sales) DESC
+)
+	SELECT 
+    o.Customer_Name,
+    o.Product_Category,
+    o.Product_Sub_Category,
+    COUNT(*) AS Purchase_Count
+	FROM 
+    KMS_Orders o
+    INNER JOIN Top_Customers tc ON o.Customer_Name = tc.Customer_Name
+	GROUP BY 
+    o.Customer_Name, o.Product_Category, o.Product_Sub_Category
+	ORDER BY 
+    o.Customer_Name, Purchase_Count DESC;
+
+	- OR
+	SELECT 
+    Customer_Name,
+    Product_Category,
+    Product_Sub_Category,
+    COUNT(*) AS Purchase_Count
+	FROM 
+    KMS_Orders
+	WHERE 
+    Customer_Name IN (
+        SELECT TOP 5 Customer_Name 
+        FROM KMS_Orders 
+        GROUP BY Customer_Name 
+        ORDER BY SUM(Sales) DESC
+    )
+	GROUP BY 
+    Customer_Name, Product_Category, Product_Sub_Category
+ORDER BY 
+    Customer_Name, Purchase_Count DESC;
+
+### 7) Which small business customer had the highest sales?
+	Select * from KMS_Orders
+	SELECT TOP 1
+    Customer_Name, Customer_Segment,
+    SUM(Sales) AS Total_Sales
+	FROM 
+    KMS_Orders
+	WHERE 
+    Customer_Segment = 'Small Business'
+	GROUP BY 
+    Customer_Name, Customer_Segment
+	ORDER BY 
+    Total_Sales DESC;
+
+### 8) Which Corporate Customer placed the most number of orders in 2009 – 2012?
+	SELECT TOP 1
+    Customer_Name,Customer_Segment,
+    COUNT(DISTINCT Order_ID) AS Order_Count
+	FROM 
+    KMS_Orders
+	WHERE 
+    Customer_Segment = 'Corporate'
+    AND Order_Date BETWEEN '2009-01-01' AND '2012-12-31'
+	GROUP BY 
+    Customer_Name, Customer_Segment
+	ORDER BY 
+    Order_Count DESC;
+
+### 9) Which consumer customer was the most profitable one?
+	SELECT TOP 1
+    Customer_Name, Customer_Segment,
+    SUM(Profit) AS Total_Profit
+	FROM 
+    KMS_Orders
+	WHERE 
+    Customer_Segment = 'Consumer'
+	GROUP BY 
+    Customer_Name, Customer_Segment
+	ORDER BY 
+    Total_Profit DESC;
+
+### 10) Which customer returned items, and what segment do they belong to?
+	SELECT 
+    Customer_Name,
+    Customer_Segment,
+    COUNT(*) AS Return_Count,
+    SUM(Profit) AS Total_Return_Amount
+	FROM 
+    KMS_Orders
+	WHERE 
+    Profit < 0
+	GROUP BY 
+    Customer_Name, Customer_Segment
+	ORDER BY 
+    Total_Return_Amount ASC;
+
+### 11) If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer
+SELECT 
+    Order_Priority,
+    Ship_Mode,
+    COUNT(*) AS Order_Count,
+    SUM(Shipping_Cost) AS Total_Shipping_Cost,
+    AVG(Shipping_Cost) AS Avg_Shipping_Cost,
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY Order_Priority) AS DECIMAL(5,1)) AS Percentage
+	FROM 
+    KMS_Orders
+	GROUP BY 
+    Order_Priority, Ship_Mode
+	ORDER BY 
+    Order_Priority, Total_Shipping_Cost DESC;
+    
+*Findings:*
+- Critical Orders (Should use fastest method):
+	- 35.9% used Delivery Truck (slowest)
+	- 15.4% used Express Air (fastest)
+	- 48.7% used Regular Air (medium speed)
+- High Priority Orders:
+	- 31.2% used Delivery Truck
+	- 12.1% used Express Air
+	- 56.7% used Regular Air
+- Low Priority Orders (Should use most economical):
+  	-36.4% used Delivery Truck (correct)
+  	- 9.1% used Express Air (wasteful)
+  	- 54.5% used Regular Air
+
+# Findings and Recommendations for KMS Inventory Analysis
+
+## Key Findings
+
+### Sales Performance
+1. **Technology products** generate the highest sales ($1.09M), followed by Furniture and Office Supplies
+2. **Northwest Territories** is the top-performing region, while Atlantic region performs the weakest
+3. **Grant Carroll** (Small Business segment) is the highest-spending customer ($89,375)
+4. **Edward Hooks** (Consumer segment) is the most profitable customer ($4,057 profit)
+
+### Shipping Analysis
+1. **Delivery Truck** accounts for the highest shipping costs ($10,591) despite being the slowest method
+2. Critical orders frequently use Delivery Truck (35.9%) rather than faster Express Air (15.4%)
+3. Shipping method selection doesn't optimally align with order priorities
+
+### Customer Insights
+1. **Corporate customers** place the most orders (Carlos Daly with 8 orders)
+2. Several customers show **negative profits** indicating returns, led by Jim Radford (Corporate)
+3. Bottom 10 customers contribute minimally to overall revenue
+
+## Strategic Recommendations
+
+### 1. Product Strategy
+- **Expand high-performing Technology category** with complementary products
+- **Bundle slow-moving items** with popular Technology products to boost sales
+- **Analyze Furniture subcategories** to replicate success in other regions
+
+### 2. Shipping Optimization
+- **Implement priority-based shipping rules**:
+  - Critical orders → Express Air (fastest)
+  - High orders → Regular Air
+  - Medium/Low orders → Delivery Truck
+- **Negotiate better rates** with Express Air providers for frequent shipments
+- **Monitor delivery performance** to balance cost and customer satisfaction
+
+### 3. Customer Relationship Management
+
+**For Top Customers:**
+- **Develop loyalty programs** for Grant Carroll, Carlos Soltero, Edward Hooks
+- **Assign dedicated account managers** to high-value customers
+- **Offer exclusive early access** to new Technology products
+
+**For Bottom-Performing Customers:**
+- **Conduct win-back campaigns** with personalized offers
+- **Implement customer feedback surveys** to understand barriers
+- **Create targeted promotions** based on purchase history
+
+**For Customers with Returns:**
+- **Improve product descriptions** to set accurate expectations
+- **Enhance quality control** for frequently returned items
+- **Develop return prevention strategies** through better customer education
+
+### 4. Regional Growth Opportunities
+- **Increase marketing efforts** in Atlantic region to match Northwest Territories' performance
+- **Analyze regional preferences** to tailor product assortments
+- **Consider local promotions** to boost underperforming regions
+
+### 5. Data-Driven Improvements
+- **Implement real-time sales dashboards** to monitor these KPIs:
+  - Sales by product category/region
+  - Shipping cost vs delivery speed
+  - Customer profitability
+- **Set up automated alerts** for negative profit transactions
+- **Conduct quarterly reviews** of customer segmentation
+
+
+
 
 
