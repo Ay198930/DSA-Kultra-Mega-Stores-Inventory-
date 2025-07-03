@@ -183,7 +183,7 @@ Technology with total sales of 5,984,248.183
 
 | # | Customer Name      | Segment        | Total Sales   |
 |---|--------------------|---------------|--------------|
-| 1 | Emily Phan        | 👨👩👧👦 Consumer | 117,124.44  |
+| 1 | Emily Phan        | 👨👦 Consumer | 117,124.44  |
 | 2 | Roy Skaria        | 🏢 Corporate    | 92,542.15   |
 | 3 | Liz MacKendrick   | 🏢 Corporate    | 76,306.43   |
 | 4 | Dennis Kane       | 🏪 Small Biz    | 75,967.59   |
@@ -307,6 +307,12 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Profit DESC;
 
+**Result:**
+
+| Customer Name | Segment        | Total Profit  |
+|---------------|---------------|---------------|
+| Emily Phan    | 👨👦 Consumer | 34,005.44 💵 |
+
 ### 10) Which customer returned items, and what segment do they belong to?
 	SELECT 
     Customer_Name,
@@ -322,6 +328,30 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Return_Amount ASC;
 
+**Result:**
+
+| Customer Name          | Customer Segment | Return Count | Total Return Amount |
+|------------------------|------------------|--------------|---------------------|
+| Roy Phan               | Consumer         | 4            | -14,753.11         |
+| Julia West             | Home Office      | 3            | -13,057.20         |
+| Maxwell Schwartz       | Corporate        | 7            | -12,981.54         |
+| Laurel Workman         | Home Office      | 4            | -12,656.77         |
+| Nathan Mautz           | Corporate        | 6            | -12,088.16         |
+| ...                    | ...              | ...          | ...                 |
+| Jeremy Farry           | Small Business   | 1            | -1.72              |
+| Clay Ludtke            | Consumer         | 1            | -1.02              |
+
+**Key Insights:**
+- Top 5 customers account for **$65,537.78** in total returns
+- Corporate segment represents **43%** of significant returns (>$5,000)
+- Ed Braxton (Home Office) has the highest return count (**16**)
+- Average return amount: **-$1,287.42** per customer
+
+**🔍Top Return Patterns**
+1. **Corporate Clients** tend to have higher frequency returns
+2. **Home Office** customers show mid-range return amounts
+3. **Consumer** returns are less frequent but can be substantial
+
 ### 11) If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer!
 	SELECT 
     Order_Priority,
@@ -336,6 +366,26 @@ Technology with total sales of 5,984,248.183
     Order_Priority, Ship_Mode
 	ORDER BY 
     Order_Priority, Total_Shipping_Cost DESC;
+
+**🚚 Result:**
+
+| Order Priority | Ship Mode      | Orders | Total Shipping Cost | Avg Cost | Usage % |
+|----------------|---------------|--------|---------------------|----------|---------|
+| **Critical**   | Delivery Truck | 228    | $10,783.82          | $47.30   | 14.2%   |
+|               | Regular Air    | 1,180  | $8,586.76           | $7.28    | 73.4%   |
+|               | Express Air    | 200    | $1,742.10           | $8.71    | 12.4%   |
+| **High**       | Delivery Truck | 248    | $11,206.88          | $45.19   | 14.0%   |
+|               | Regular Air    | 1,308  | $10,005.01          | $7.65    | 74.0%   |
+|               | Express Air    | 212    | $1,453.53           | $6.86    | 12.0%   |
+| **Low**        | Delivery Truck | 250    | $11,131.61          | $44.53   | 14.5%   |
+|               | Regular Air    | 1,280  | $10,263.62          | $8.02    | 74.4%   |
+|               | Express Air    | 190    | $1,551.63           | $8.17    | 11.0%   |
+| **Medium**     | Delivery Truck | 205    | $9,461.62           | $46.15   | 12.6%   |
+|               | Regular Air    | 1,225  | $9,418.72           | $7.69    | 75.1%   |
+|               | Express Air    | 201    | $1,633.59           | $8.13    | 12.3%   |
+| Not Specified  | Regular Air    | 1,277  | $9,734.08           | $7.62    | 76.4%   |
+|               | Delivery Truck | 215    | $9,388.01           | $43.67   | 12.9%   |
+|               | Express Air    | 180    | $1,470.06           | $8.17    | 10.8%   |
     
 **Findings:**
 - Critical Orders (Should use fastest method):
