@@ -5,12 +5,11 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 
 ## 📖 Table of Contents
 - [Project Overview](#project-overview)
-- [Data Preparation](#data-preparation)
-   - [Excel Cleaning](#excel-data-cleaning-steps)
-   - [SQL Import](#sql-data-import-process)
-- [Analysis Scenarios](#analysis-scenarios)
-   - [Case Scenario 1](#case-scenario-1)
-   - [Case Scenario 2](#case-scenario-2)
+- [Step 1: Data Cleaning Using Microsoft Excel](#Step-1:-Data-Cleaning-Using-Microsoft-Excel)
+- [Step 2. Data cleaning using SQL Server Management Studio 20](#Step-2.-Data-cleaning-using-SQL-Server-Management-Studio-20)
+- [Step 3. Analysis using SQL Server Management Studio 20, Microsoft SQL Server See attached File](#Step-3.-Analysis-using-SQL-Server-Management-Studio-20,-Microsoft-SQL-Server-See attached File)
+   - [A. Case Scenario I](#A.-Case-Scenario-1)
+   - [B. Case Scenario II](#B.-Case-scenario-II)
 - [Key Insights](#key-insights)
 - [Strategic Recommendations](#strategic-recommendations)
 
@@ -39,7 +38,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see at
       - Click on the Home tab in your menu bar 
       - Go to Number and increase the indent twice to increase the decimal point. This adjusts all numbers that are not on the decimal point. 
 
-## Step 2. Data Cleaning and Analysis Using SQL Server Management Studio 20(Microsoft SQL Server
+## Step 2. Data cleaning using SQL Server Management Studio 20
 ### 1. Using your import data to load your data into SQL Server Management Studio 20(Microsoft SQL Server)
       - Open SQL Server Management Studio and connect to your database server
       - Right-click your target database in Object Explorer
@@ -61,8 +60,8 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see at
       ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
       ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
 
-### 3. Analysis using SQL Server Management Studio 20(Microsoft SQL Server (See attached File)
-### A. Case Scenario 1
+## Step 3. Analysis using SQL Server Management Studio 20, Microsoft SQL Server- See attached File
+### A. Case Scenario I
 ### 1) Which product category had the highest sales?
     SELECT TOP 1
     Product_Category,
@@ -174,7 +173,7 @@ Technology with total sales of 5,984,248.183
 | Delivery Truck | 51,971.94           |
 
 
-### Case Scenario II
+### B. Case Scenario II
 ### 6) Who are the most valuable customers, and what products or services do they typically purchase?
 #### Most Valuable Customers:
 	SELECT TOP 5
