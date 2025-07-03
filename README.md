@@ -76,7 +76,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see at
 Technology with total sales of 5,984,248.183
 
 ### 2) What are the Top 3 and Bottom 3 regions in terms of sales
-	- TOP 3
+#### TOP 3
 	SELECT TOP 3
     Region,
     SUM(Sales) as Total_Sales
@@ -92,16 +92,21 @@ Technology with total sales of 5,984,248.183
 - Ontario:	3,063,212.484
 - Prarie:	2,837,304.599
 
-   - BOTTOM 3
-  SELECT TOP 3
-  Region,
-  SUM(Sales) as Total_Sales
-FROM 
-    	KMS_Orders
+#### BOTTOM 3
+	SELECT TOP 3
+    Region,
+    SUM(Sales) as Total_Sales
+	FROM 
+    KMS_Orders
 	GROUP BY 
-    	Region
+    Region
 	ORDER BY 
-    	Total_Sales ASC;
+    Total_Sales ASC;
+  
+**Result:**
+- Nunavut: 116,376.483
+- Northwest Territories: 8008,47.338
+- Yukon	975,867.379: 
     
 ### 3) What were the total Sales of appliances in Ontario?
 	SELECT 
