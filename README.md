@@ -167,6 +167,7 @@ Technology with total sales of 5,984,248.183
 
 ### Case Scenario II
 ### 6) Who are the most valuable customers, and what products or services do they typically purchase?
+#### Most Valuable Customers:
 	SELECT TOP 5
     Customer_Name,
     Customer_Segment,
@@ -178,7 +179,14 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Sales DESC;
 
-	- Their purchases
+**Result:**
+- Emily Phan/Consumer/117,124.435
+- Roy Skaria/Corporate/92,542.153
+- Liz MacKendrick/Corporate/76,306.431
+- Dennis Kane/Small Business/5,967.594
+- John Lucas/Small Business/72,331.878
+
+#### Their purchases
 	WITH Top_Customers AS (
     SELECT TOP 5 Customer_Name
     FROM KMS_Orders
@@ -217,6 +225,31 @@ Technology with total sales of 5,984,248.183
     	Customer_Name, Product_Category, Product_Sub_Category
 	ORDER BY 
     Customer_Name, Purchase_Count DESC;
+
+**Result:**
+
+| Customer Name       | Product Category | Product Sub-Category           | Purchase Count |
+|---------------------|------------------|--------------------------------|----------------|
+| Deborah Brumfield   | Technology       | Telephones and Communication   | 4              |
+| Deborah Brumfield   | Furniture        | Chairs & Chairmats             | 3              |
+| Deborah Brumfield   | Office Supplies  | Storage & Organization         | 3              |
+| Deborah Brumfield   | Technology       | Computer Peripherals           | 2              |
+| Deborah Brumfield   | Technology       | Copiers and Fax                | 1              |
+| Deborah Brumfield   | Technology       | Office Machines                | 1              |
+| Deborah Brumfield   | Furniture        | Office Furnishings             | 1              |
+| Deborah Brumfield   | Office Supplies  | Appliances                     | 1              |
+| Deborah Brumfield   | Office Supplies  | Binders and Binder Accessories | 1              |
+| Deborah Brumfield   | Office Supplies  | Labels                         | 1              |
+| Deborah Brumfield   | Office Supplies  | Pens & Art Supplies            | 1              |
+| Deborah Brumfield   | Office Supplies  | Scissors, Rulers and Trimmers  | 1              |
+| Emily Phan          | Office Supplies  | Binders and Binder Accessories | 2              |
+| Emily Phan          | Technology       | Office Machines                | 2              |
+| Emily Phan          | Technology       | Telephones and Communication   | 2              |
+
+**Key Insights:**
+- Deborah Brumfield makes purchases across 3 main categories (Technology, Furniture, Office Supplies)
+- Top sub-categories: Telephones (4), Chairs (3), Storage (3)
+- Emily Phan shows more focused purchasing in Technology and Office Supplies
 
 ### 7) Which small business customer had the highest sales?
 	Select * from KMS_Orders
