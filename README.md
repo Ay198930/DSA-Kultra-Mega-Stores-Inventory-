@@ -10,7 +10,7 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 - [Step 3. Analysis using SQL Server Management Studio 20, Microsoft SQL Server See attached File](#Step-3.-Analysis-using-SQL-Server-Management-Studio-20,-Microsoft-SQL-Server-See attached File)
    - [A. Case Scenario I](#A.-Case-Scenario-1)
    - [B. Case Scenario II](#B.-Case-scenario-II)
-- [Key Insights](#key-insights)
+- [Key Findings](#key-Findings)
 - [Strategic Recommendations](#strategic-recommendations)
 
    
