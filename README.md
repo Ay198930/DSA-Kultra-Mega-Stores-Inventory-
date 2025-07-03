@@ -380,21 +380,21 @@ Technology with total sales of 5,984,248.183
 
 | Order Priority | Ship Mode      | Orders | Total Shipping Cost | Avg Cost | Usage % |
 |----------------|---------------|--------|---------------------|----------|---------|
-| **Critical**   | Delivery Truck | 228    | $10,783.82          | $47.30   | 14.2%   |
-|               | Regular Air    | 1,180  | $8,586.76           | $7.28    | 73.4%   |
-|               | Express Air    | 200    | $1,742.10           | $8.71    | 12.4%   |
-| **High**       | Delivery Truck | 248    | $11,206.88          | $45.19   | 14.0%   |
-|               | Regular Air    | 1,308  | $10,005.01          | $7.65    | 74.0%   |
-|               | Express Air    | 212    | $1,453.53           | $6.86    | 12.0%   |
-| **Low**        | Delivery Truck | 250    | $11,131.61          | $44.53   | 14.5%   |
-|               | Regular Air    | 1,280  | $10,263.62          | $8.02    | 74.4%   |
-|               | Express Air    | 190    | $1,551.63           | $8.17    | 11.0%   |
-| **Medium**     | Delivery Truck | 205    | $9,461.62           | $46.15   | 12.6%   |
-|               | Regular Air    | 1,225  | $9,418.72           | $7.69    | 75.1%   |
-|               | Express Air    | 201    | $1,633.59           | $8.13    | 12.3%   |
-| Not Specified  | Regular Air    | 1,277  | $9,734.08           | $7.62    | 76.4%   |
-|               | Delivery Truck | 215    | $9,388.01           | $43.67   | 12.9%   |
-|               | Express Air    | 180    | $1,470.06           | $8.17    | 10.8%   |
+| **Critical**   | Delivery Truck | 228    | $10,783.82          | 47.30   | 14.2%   |
+|               | Regular Air    | 1,180  | $8,586.76           | 7.28    | 73.4%   |
+|               | Express Air    | 200    | $1,742.10           | 8.71    | 12.4%   |
+| **High**       | Delivery Truck | 248    | $11,206.88          | 45.19   | 14.0%   |
+|               | Regular Air    | 1,308  | $10,005.01          | 7.65    | 74.0%   |
+|               | Express Air    | 212    | $1,453.53           | 6.86    | 12.0%   |
+| **Low**        | Delivery Truck | 250    | $11,131.61          | 44.53   | 14.5%   |
+|               | Regular Air    | 1,280  | $10,263.62          | 8.02    | 74.4%   |
+|               | Express Air    | 190    | $1,551.63           | 8.17    | 11.0%   |
+| **Medium**     | Delivery Truck | 205    | $9,461.62           | 46.15   | 12.6%   |
+|               | Regular Air    | 1,225  | $9,418.72           | 7.69    | 75.1%   |
+|               | Express Air    | 201    | $1,633.59           | 8.13    | 12.3%   |
+| Not Specified  | Regular Air    | 1,277  | $9,734.08           | 7.62    | 76.4%   |
+|               | Delivery Truck | 215    | $9,388.01           | 43.67   | 12.9%   |
+|               | Express Air    | 180    | $1,470.06           | 8.17    | 10.8%   |
     
 **Findings:**
 - Critical Orders (Should use fastest method):
