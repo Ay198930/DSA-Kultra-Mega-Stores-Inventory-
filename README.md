@@ -161,6 +161,10 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Shipping_Cost DESC;
 
+**Result:**
+- Delivery Truck: 51,971.940
+
+
 ### Case Scenario II
 ### 6) Who are the most valuable customers, and what products or services do they typically purchase?
 	SELECT TOP 5
