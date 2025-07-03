@@ -183,11 +183,11 @@ Technology with total sales of 5,984,248.183
 
 | # | Customer Name      | Segment        | Total Sales   |
 |---|--------------------|---------------|--------------|
-| 1 | Emily Phan        | 👨👩👧👦 Consumer | $117,124.44  |
-| 2 | Roy Skaria        | 🏢 Corporate    | $92,542.15   |
-| 3 | Liz MacKendrick   | 🏢 Corporate    | $76,306.43   |
-| 4 | Dennis Kane       | 🏪 Small Biz    | $75,967.59   |
-| 5 | John Lucas        | 🏪 Small Biz    | $72,331.88   |
+| 1 | Emily Phan        | 👨👩👧👦 Consumer | 117,124.44  |
+| 2 | Roy Skaria        | 🏢 Corporate    | 92,542.15   |
+| 3 | Liz MacKendrick   | 🏢 Corporate    | 76,306.43   |
+| 4 | Dennis Kane       | 🏪 Small Biz    | 75,967.59   |
+| 5 | John Lucas        | 🏪 Small Biz    | 72,331.88   |
 
 #### Their purchases
 	WITH Top_Customers AS (
@@ -268,6 +268,12 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Sales DESC;
 
+**Result:**
+
+| Customer Name | Segment        | Revenue      |
+|---------------|---------------|-------------|
+| Dennis Kane   | 🏪 Small Biz   | 75,967.59  |
+
 ### 8) Which Corporate Customer placed the most number of orders in 2009 – 2012?
 	SELECT TOP 1
     Customer_Name,Customer_Segment,
@@ -281,6 +287,12 @@ Technology with total sales of 5,984,248.183
     Customer_Name, Customer_Segment
 	ORDER BY 
     Order_Count DESC;
+
+**Result:**
+
+| Customer Name | Segment        | Total Orders |
+|---------------|---------------|-------------|
+| Adam Hart     | 🏢 Corporate   | 18 🚀       |
 
 ### 9) Which consumer customer was the most profitable one?
 	SELECT TOP 1
