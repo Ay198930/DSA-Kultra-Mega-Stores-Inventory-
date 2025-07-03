@@ -7,7 +7,7 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 - [Project Overview](#project-overview)
 - [Step 1: Data Cleaning Using Microsoft Excel](#step-1-data-cleaning-using-microsoft-excel)
 - [Step 2: Data Cleaning Using SQL Server Management Studio 20](#step-2-data-cleaning-using-sql-server-management-studio-20)
-- [Step 3: Analysis Using SQL Server Management Studio 20 (Microsoft SQL Server - See Attached File)](#step-3-analysis-using-sql-server-management-studio-20-microsoft-sql-server---see-attached-file)
+- [Step 3: Analysis Using SQL Server Management Studio 20](#step-3-analysis-using-sql-server-management-studio-20)
   - [A. Case Scenario I](#a-case-scenario-i)
   - [B. Case Scenario II](#b-case-scenario-ii)
 - [Key Findings](#key-findings)
@@ -60,7 +60,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see at
       ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
       ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
 
-## Step 3. Analysis using SQL Server Management Studio 20 (Microsoft SQL Server- See attached File)
+## Step 3. Analysis using SQL Server Management Studio 20 
 ### A. Case Scenario I
 ### 1) Which product category had the highest sales?
     SELECT TOP 1
