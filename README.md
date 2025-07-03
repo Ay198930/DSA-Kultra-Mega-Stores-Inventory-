@@ -16,10 +16,10 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 
    
 ### Project Overview
-The dataset comprises 8,400  products across 21 columns, containing aggregated products, profit margin and shipping information. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
+The dataset comprises 8,399 products across 21 columns to optimise product category performance, regional sales strategies, shipping cost efficiency and customer segmentation. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
 
 **Data Sources:**
-The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an open-source dataset that is freely available for download from platforms such as Kaggle, LMS platform or other public data repositories.
+The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see attached file), an open-source dataset that is freely available for download from platforms such as Kaggle, LMS platform or other public data repositories.
 
 **Tools Used:**
 - Microsoft Excel for Data Cleaning  [Download Here](https://www.microsoft.com/en-us/microsoft-365/download-office) 
@@ -60,7 +60,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
       ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
       ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
 
-### 3. Analysis using SQL Server Management Studio 20(Microsoft SQL Server
+### 3. Analysis using SQL Server Management Studio 20(Microsoft SQL Server (See attached File)
 ### A. Case Scenario 1
 ### 1) Which product category had the highest sales?
     SELECT TOP 1
@@ -72,7 +72,8 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     Product_Category
 	ORDER BY 
     Total_Sales DESC;
-
+**Result:**
+Technology with total sales of 5,984,248.183
 
 ### 2) What are the Top 3 and Bottom 3 regions in terms of sales
 	- TOP 3
@@ -85,17 +86,22 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
     Region
 	ORDER BY 
     Total_Sales DESC;
+   
+**Result:**
+- West:	3,597,549.270
+- Ontario:	3,063,212.484
+- Prarie:	2,837,304.599
 
-    - BOTTOM 3
-    SELECT TOP 3
-    Region,
-    SUM(Sales) as Total_Sales
-	FROM 
-    KMS_Orders
+   - BOTTOM 3
+  SELECT TOP 3
+  Region,
+  SUM(Sales) as Total_Sales
+FROM 
+    	KMS_Orders
 	GROUP BY 
-    Region
+    	Region
 	ORDER BY 
-    Total_Sales ASC;
+    	Total_Sales ASC;
     
 ### 3) What were the total Sales of appliances in Ontario?
 	SELECT 
@@ -274,9 +280,9 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
   	- 9.1% used Express Air (wasteful)
   	- 54.5% used Regular Air
 
-# Findings and Recommendations for KMS Inventory Analysis
+## Findings and Recommendations for KMS Inventory Analysis
 
-## Key Findings
+### Key Findings
 
 ### Sales Performance
 1. **Technology products** generate the highest sales ($1.09M), followed by Furniture and Office Supplies
@@ -294,7 +300,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv, an ope
 2. Several customers show **negative profits** indicating returns, led by Jim Radford (Corporate)
 3. Bottom 10 customers contribute minimally to overall revenue
 
-## Strategic Recommendations
+### Strategic Recommendations
 
 ### 1. Product Strategy
 - **Expand high-performing Technology category** with complementary products
