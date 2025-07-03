@@ -19,6 +19,7 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 The dataset comprises 8,399 products across 21 columns to optimise product category performance, regional sales strategies, shipping cost efficiency and customer segmentation. Before performing any analysis, a  data cleaning process was conducted using Find and Replace in Microsoft Excel, followed by insightful and comprehensive analysis, findings and recommendations using SQL Server Management Studio 20.
 
 **Data Sources:**
+
 The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see attached file), an open-source dataset that is freely available for download from platforms such as Kaggle, LMS platform or other public data repositories.
 
 **Tools Used:**
