@@ -180,11 +180,14 @@ Technology with total sales of 5,984,248.183
     Total_Sales DESC;
 
 **Result:**
-- Emily Phan/Consumer/117,124.435
-- Roy Skaria/Corporate/92,542.153
-- Liz MacKendrick/Corporate/76,306.431
-- Dennis Kane/Small Business/5,967.594
-- John Lucas/Small Business/72,331.878
+
+| # | Customer Name      | Segment        | Total Sales   |
+|---|--------------------|---------------|--------------|
+| 1 | Emily Phan        | 👨👩👧👦 Consumer | $117,124.44  |
+| 2 | Roy Skaria        | 🏢 Corporate    | $92,542.15   |
+| 3 | Liz MacKendrick   | 🏢 Corporate    | $76,306.43   |
+| 4 | Dennis Kane       | 🏪 Small Biz    | $75,967.59   |
+| 5 | John Lucas        | 🏪 Small Biz    | $72,331.88   |
 
 #### Their purchases
 	WITH Top_Customers AS (
