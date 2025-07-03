@@ -88,9 +88,11 @@ Technology with total sales of 5,984,248.183
     Total_Sales DESC;
    
 **Result:**
-- West:	3,597,549.270
-- Ontario: 3,063,212.484
-- Prarie: 2,837,304.599
+| Region   | Total Sales   |
+|----------|---------------|
+| West     | 3,597,549.27  |
+| Ontario  | 3,063,212.48  |
+| Prairie  | 2,837,304.60  |
 
 #### BOTTOM 3
 	SELECT TOP 3
@@ -104,9 +106,11 @@ Technology with total sales of 5,984,248.183
     Total_Sales ASC;
   
 **Result:**
-- Nunavut: 116,376.483
-- Northwest Territories: 8008,47.338
-- Yukon: 975,867.379: 
+| Region                 | Total Sales   |
+|------------------------|---------------|
+| Nunavut               | 116,376.48    |
+| Northwest Territories | 800,847.34    |
+| Yukon                 | 975,867.38    |
     
 ### 3) What were the total Sales of appliances in Ontario?
 	SELECT 
@@ -132,16 +136,18 @@ Technology with total sales of 5,984,248.183
     Total_Sales ASC;
     
 **Result:** 
-- Jeremy Farry: 85.720
-- Natalie DeCherney: 125.900
-- Nicole Fjeld: 153.030
-- Katrina Edelman: 180.760
-- Dorothy Dickinson: 198.080
-- Christine Kargatis: 293.220
-- Eric Murdock: 343.328
-- Chris McAfee: 350.180
-- Rick Huthwaite: 415.820
-- Mark Hamilton: 450.990
+| Customer Name       | Total Sales |
+|---------------------|-------------|
+| Jeremy Farry        | 85.72       |
+| Natalie DeCherney   | 125.90      |
+| Nicole Fjeld        | 153.03      |
+| Katrina Edelman     | 180.76      |
+| Dorothy Dickinson   | 198.08      |
+| Christine Kargatis  | 293.22      |
+| Eric Murdock        | 343.33      |
+| Chris McAfee        | 350.18      |
+| Rick Huthwaite      | 415.82      |
+| Mark Hamilton       | 450.99      |
   
 **Recommendations**
 - Create targeted promotions for these customers
@@ -162,7 +168,9 @@ Technology with total sales of 5,984,248.183
     Total_Shipping_Cost DESC;
 
 **Result:**
-- Delivery Truck: 51,971.940
+| Ship Mode      | Total Shipping Cost |
+|----------------|---------------------|
+| Delivery Truck | 51,971.94           |
 
 
 ### Case Scenario II
@@ -342,10 +350,10 @@ Technology with total sales of 5,984,248.183
 | Clay Ludtke            | Consumer         | 1            | -1.02              |
 
 **Key Insights:**
-- Top 5 customers account for **$65,537.78** in total returns
+- Top 5 customers account for **65,537.78** in total returns
 - Corporate segment represents **43%** of significant returns (>$5,000)
 - Ed Braxton (Home Office) has the highest return count (**16**)
-- Average return amount: **-$1,287.42** per customer
+- Average return amount: **-1,287.42** per customer
 
 **🔍Top Return Patterns**
 1. **Corporate Clients** tend to have higher frequency returns
