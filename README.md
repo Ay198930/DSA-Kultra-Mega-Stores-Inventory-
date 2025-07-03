@@ -60,7 +60,7 @@ The primary data source utilized in this analysis is KMSSQLCaseStudy.csv (see at
       ALTER TABLE KMS_Orders ALTER COLUMN Unit_Price DECIMAL(10,3);
       ALTER TABLE KMS_Orders ALTER COLUMN Shipping_Cost DECIMAL(10,3);
 
-## Step 3. Analysis using SQL Server Management Studio 20, Microsoft SQL Server- See attached File
+## Step 3. Analysis using SQL Server Management Studio 20 (Microsoft SQL Server- See attached File)
 ### A. Case Scenario I
 ### 1) Which product category had the highest sales?
     SELECT TOP 1
