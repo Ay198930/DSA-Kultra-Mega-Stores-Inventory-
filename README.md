@@ -5,12 +5,12 @@ I was tasked with analysing KMS Inventory data using my SQL skills and presentin
 
 ## 📖 Table of Contents
 - [Project Overview](#project-overview)
-- [Step 1: Data Cleaning Using Microsoft Excel](#Step-1:-Data-Cleaning-Using-Microsoft-Excel)
-- [Step 2. Data cleaning using SQL Server Management Studio 20](#Step-2.-Data-cleaning-using-SQL-Server-Management-Studio-20)
-- [Step 3. Analysis using SQL Server Management Studio 20, Microsoft SQL Server See attached File](#Step-3.-Analysis-using-SQL-Server-Management-Studio-20,-Microsoft-SQL-Server-See attached File)
-   - [A. Case Scenario I](#A.-Case-Scenario-1)
-   - [B. Case Scenario II](#B.-Case-scenario-II)
-- [Key Findings](#key-Findings)
+- [Step 1: Data Cleaning Using Microsoft Excel](#step-1-data-cleaning-using-microsoft-excel)
+- [Step 2: Data Cleaning Using SQL Server Management Studio 20](#step-2-data-cleaning-using-sql-server-management-studio-20)
+- [Step 3: Analysis Using SQL Server Management Studio 20, Microsoft SQL Server](#step-3-analysis-using-sql-server-management-studio-20-microsoft-sql-server)
+  - [A. Case Scenario I](#a-case-scenario-i)
+  - [B. Case Scenario II](#b-case-scenario-ii)
+- [Key Findings](#key-findings)
 - [Strategic Recommendations](#strategic-recommendations)
 
    
