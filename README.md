@@ -89,8 +89,8 @@ Technology with total sales of 5,984,248.183
    
 **Result:**
 - West:	3,597,549.270
-- Ontario:	3,063,212.484
-- Prarie:	2,837,304.599
+- Ontario: 3,063,212.484
+- Prarie: 2,837,304.599
 
 #### BOTTOM 3
 	SELECT TOP 3
@@ -106,7 +106,7 @@ Technology with total sales of 5,984,248.183
 **Result:**
 - Nunavut: 116,376.483
 - Northwest Territories: 8008,47.338
-- Yukon	975,867.379: 
+- Yukon: 975,867.379: 
     
 ### 3) What were the total Sales of appliances in Ontario?
 	SELECT 
@@ -116,6 +116,8 @@ Technology with total sales of 5,984,248.183
 	WHERE 
     Product_Sub_Category = 'Appliances'
     AND Province = 'Ontario';
+
+**Result:** The total sales of appliances in Ontario are 202,346.840
 
 ### 4) Advise the management of KMS on what to do to increase the revenue from the bottom 10 customers
 	Select * from KMS_Orders
@@ -129,6 +131,18 @@ Technology with total sales of 5,984,248.183
 	ORDER BY 
     Total_Sales ASC;
     
+**Result:** 
+- Jeremy Farry: 85.720
+- Natalie DeCherney: 125.900
+- Nicole Fjeld: 153.030
+- Katrina Edelman: 180.760
+- Dorothy Dickinson: 198.080
+- Christine Kargatis: 293.220
+- Eric Murdock: 343.328
+- Chris McAfee: 350.180
+- Rick Huthwaite: 415.820
+- Mark Hamilton: 450.990
+  
 **Recommendations**
 - Create targeted promotions for these customers
 - Implement a customer win-back campaign
